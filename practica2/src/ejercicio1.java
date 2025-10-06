@@ -12,6 +12,7 @@ public class ejercicio1 {
         for (i = 0; i < 10; i++){
             valor = scanner.nextInt();
             System.out.println("Introduce otro valor");
+
         }
         }
     }
