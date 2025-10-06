@@ -9,10 +9,10 @@ public class ejercicio1 {
         System.out.println("introduce un valor");
         int i;
         int valor = 0;
-        for (i = 0; i < 10; i++){
+        for (i = 0; i < arrayint.length; i++){
             valor = scanner.nextInt();
             System.out.println("Introduce otro valor");
-
+            arrayint[i] = valor;
         }
         }
     }
