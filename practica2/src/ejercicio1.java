@@ -6,12 +6,18 @@ public class ejercicio1 {
         // Crea una array de 10 posiciones de números pedidos por teclado
         Scanner scanner = new Scanner(System.in);
         int[] arrayint = new int[10];
-        System.out.println("introduce un valor");
-        int i;
-        int valor = 0;
-        for (i = 0; i < 10; i++){
-            valor = scanner.nextInt();
-            System.out.println("Introduce otro valor");
+        // le das una longitud a la variable
+        System.out.println("introduzca un valor");
+        for (int i = 0; i < arrayint.length; i++){
+            // Recorre la array de 1 en 1 hasta llegar a la longitud de la array
+            arrayint[i] = scanner.nextInt();
+            System.out.println("Introduzca otro valor");
+            // le pides que introduca un número
         }
+        for (int i = 0; i < arrayint.length; i++) {
+            // vuelves a recorrer la array
+            System.out.println("indice "+i+" valor: "+ arrayint[i]);
+            // imprime por pantalla en el indice el valor
         }
     }
+}
