@@ -1,3 +1,7 @@
+
+
+
+
 public class Ejercicio04 {
     public static void main(String[] args) {
         //Crea un array de números de 100 posiciones, que contendrá los números del 1 al 100.
@@ -6,10 +10,9 @@ public class Ejercicio04 {
         //Creamos un array de números de 100 posiciones
         int[] arrayInt = new int[100];
 
-        // Recorremos el array y rellenamos cada posicion con un númearo aleatorio
-        //entre 1 - 100
+        // Recorremos el array y rellenamos cada posicion con numeros de 1 a 100
         for (int i = 0; i < arrayInt.length; i++) {
-            arrayInt[i] = (int) (Math.random() * 100 + 1);
+            arrayInt[i] = i + 1;
         }
         //Una vez rellenamos el array volvemos a recorrerlo para
         // sumar su contenido
