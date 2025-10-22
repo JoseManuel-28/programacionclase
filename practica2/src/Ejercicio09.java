@@ -10,16 +10,22 @@ public class Ejercicio09 {
         //El valor mínimo y la posición en la que aparece.
         //Muestre el resultado en consola, por ejemplo:
 
-        //TODO poner comentarios del 9 y del 10
+        //Inicializas scanner (sc) e inicalizamos el tamaño del array
         Scanner sc = new Scanner(System.in);
         int[] arrayInt = new int[10];
 
+        //recorremos la longitud del array para pedirle por teclado que introduzca el valor de cada
+        //posición
         for (int i = 0; i < arrayInt.length; i++) {
             System.out.println("Introduzca 1 número entero ");
             arrayInt[i] = sc.nextInt();
         }
-
+        //Inicializamos el valor maximo del array
         int maxNumArray = arrayInt[0];
+
+        //Volvemos a recorrer el array para obtener el valor maximo del array
+        //si el valor del array es mayor, se actualiza
+        //el valor máximo
 
         for (int a = 0; a < arrayInt.length; a++) {
             if(arrayInt[a] > maxNumArray){
@@ -27,6 +33,9 @@ public class Ejercicio09 {
             }
         }
 
+        //Hacemos el mismo procedimiento pero para obtener el numero minimo de los valores
+        //del array ( lo inicializamos pero con el nombre minNumArray,si el valor del array
+        //es menor, se actualiza el valor minimo
         int minNumArray = arrayInt[0];
 
         for (int b = 0; b < arrayInt.length; b++) {
@@ -35,10 +44,12 @@ public class Ejercicio09 {
             }
         }
 
+        //Inicializamos la posicion del valor maximo y el valor mínimo del array
+        //recorremos el array
         int indexMaxNumArray = -1;
         int indexMinNumArray = -1;
 
-
+        //TODO seguir poniendo comentarios mañana
         for (int c = 0; c < arrayInt.length; c++) {
             if(maxNumArray == arrayInt[c]){
                 indexMaxNumArray = c;
