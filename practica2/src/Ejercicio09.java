@@ -10,6 +10,7 @@ public class Ejercicio09 {
         //El valor mínimo y la posición en la que aparece.
         //Muestre el resultado en consola, por ejemplo:
 
+        //TODO poner comentarios del 9 y del 10
         Scanner sc = new Scanner(System.in);
         int[] arrayInt = new int[10];
 

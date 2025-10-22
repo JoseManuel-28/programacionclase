@@ -10,5 +10,5 @@ public class ejercicio1 {
             System.out.println("introduce un valor");
             arrayint[i] = scanner.nextInt();
         }
-        }
     }
+}
