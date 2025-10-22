@@ -36,9 +36,9 @@ public class Ejercicio08 {
         //entre la longitud del array
         int averageHeight = sumNumArray/arrayPerson.length;
 
-        //Inicializamos la altura superior a la media y la inferior a la media recorriendo la longitud del
-        //array si el valor del indice es mayor que la altura media se suma 1 a personHighAverage
-        //si no se le suma 1 a personLessAverage
+        //Inicializamos a 0 la altura superior a la media y la inferior para utilizarlas como contador
+        //recorremos el array y comparamos el contenido con la mayor altura media, si es mayor
+        //sumamos 1 al contador personHighAverage, si es menor sumamos 1 al contador personLessAverage
         int personHighAverage = 0;
         int personLessAverage = 0;
         for (int b = 0; b < arrayPerson.length; b++) {
