@@ -7,3 +7,4 @@ public class Ejercicio10 {
         // para las notas. ¿Serías capaz de hacerlo con un array BIdimensional?
     }
 }
+//TODO No comprendo el ejercicio y lo dejo en blanco

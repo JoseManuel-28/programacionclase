@@ -16,6 +16,7 @@ public class Ejercicio09 {
 
         //recorremos la longitud del array para pedirle por teclado que introduzca el valor de cada
         //posición
+
         for (int i = 0; i < arrayInt.length; i++) {
             System.out.println("Introduzca 1 número entero ");
             arrayInt[i] = sc.nextInt();
@@ -49,7 +50,7 @@ public class Ejercicio09 {
         int indexMaxNumArray = -1;
         int indexMinNumArray = -1;
 
-        //TODO seguir poniendo comentarios mañana
+        //Recorremos el array pata indicar la media la posicion del número maximo
         for (int c = 0; c < arrayInt.length; c++) {
             if(maxNumArray == arrayInt[c]){
                 indexMaxNumArray = c;
@@ -59,6 +60,8 @@ public class Ejercicio09 {
             }
         }
 
+        //indicamos por pantalla el valor maximo y el valor minimo y la posicion en la que se
+        //encuentran
         System.out.println("Valor máximo: " + maxNumArray + " en la posicíon " + indexMaxNumArray);
         System.out.println("Valor mínimo: " + minNumArray + " en la posicíon " + indexMinNumArray);
     }
