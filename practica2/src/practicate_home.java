@@ -2,16 +2,13 @@ import java.util.Scanner;
 
 public class practicate_home {
     public static void main(String[] args) {
-        /*
-               pide un nombre por teclado y haz que te salude.
-               Por ejemplo, si introduces "Fernando", la respuesta debe ser hola fernando!
+
+        /*  Introduce el precio del un producto sin IVA y calcula su precio con IVA.
+            El IVA es del 21%.
+            Formatea el resultado para que se muestre con dos decimales.
          */
 
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("introduzca su nombre por pantalla");
-        String  nombre = sc.next();
-
-        System.out.println(" ¡ hola " + nombre + " !");
+        System.out.println("introduzca el precio de un producto");
     }
 }
