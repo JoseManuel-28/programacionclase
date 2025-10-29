@@ -1,3 +1,5 @@
+package practica02;
+
 public class Ejercicio02 {
     public static void main(String[] args){
         //Muestra por pantalla todos los elementos de un array de números enteros
