@@ -1,3 +1,5 @@
+package practica02;
+
 public class Ejercicio03 {
     public static void main(String[] args) {
         //Crea un array que contenga 5 números. Realiza un programa que te muestre por pantalla
