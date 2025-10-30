@@ -1,3 +1,5 @@
+package programacionclase.src;
+
 import java.util.Scanner;
 
 public class practicate_home {
