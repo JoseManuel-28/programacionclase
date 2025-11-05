@@ -4,7 +4,7 @@ public class ejercicio2 {
     public static void main(String[] args) {
         /*Escribe un programa que solicite 20 números enteros. Estos números debemos de introducirlo en un array
         de 4 filas por 5 columnas. El programa mostrará las sumas parciales de filas y en las columnas
-        /el mayor número de la columna. La suma total debe aparecer en la esquina inferior derecha.*/
+        el mayor número de la columna. La suma total debe aparecer en la esquina inferior derecha.*/
 
         /*Scanner sc = new Scanner(System.in);
         int [][] arrayInt = new int[4][5];
@@ -22,20 +22,40 @@ public class ejercicio2 {
                 {23, 57, 78, 12, 69},
                 {4, 8, 90, 46, 96}
         };
-
         System.out.println("----------------------------------------------------------");
+
+
+        int totalSum = 0;
+
+        int filaSum = 0; // Suma de los elementos de la fila
+
         for (int i = 0; i < arrayInt.length; i++) {
             for (int a = 0; a < arrayInt[i].length; a++) {
-                System.out.printf( "  " + " %-6d ", arrayInt[i][a]);
+                filaSum += arrayInt[i][a]; // Sumar los elementos de la fila
+                System.out.printf("  " + " %-6d ", arrayInt[i][a]);
             }
-            System.out.print( " fila " + i);
+
+            totalSum += filaSum; // Sumar la fila al total
+            System.out.printf("Fila %d: Suma = %-6d\n", i, filaSum);
             System.out.println();
         }
+        for (int a = 0; a < arrayInt[0].length; a++) {
+            int columMayor = arrayInt[0][a];
+            for (int i = 0; i < arrayInt.length; i++) { // Recorrer las filas
+                if (arrayInt[i][a] > columMayor) {
+                    columMayor = arrayInt[i][a];
+                }
+            }
 
-        System.out.println("columna 0 " + "Columna 1 " + "Columna 2 " + "Columna 3 " + "Columna 4 " + "  TOTAL");
+            System.out.printf("columna "  +  a  +" : " + + columMayor + " ");
+
+
+            }
+
+        System.out.println("Suma total" + totalSum);
         System.out.println("----------------------------------------------------------");
-        }
     }
+}
 
 
 
