@@ -3,10 +3,15 @@ import java.util.Random;
 public class ejercicio3 {
     public static void main(String[] args){
 
+       /* Modifica el programa anterior de tal forma que los números que se introducen en el array
+        se generen de forma aleatoria (valores entre 1 y 1999).*/
+
 
         System.out.println("--------------------------------------------------------------------------------------------------");
+
         int[][] arrayInt =new int[4][5];
         Random arrayRand = new Random();
+
         for (int i = 0; i <arrayInt.length; i++) {
             for (int a = 0; a < arrayInt[i].length; a++) {
                 arrayInt[i][a] = arrayRand.nextInt(999) +1;
@@ -15,7 +20,6 @@ public class ejercicio3 {
         }
 
         int totalSum = 0;
-
         int filaSum = 0; // Suma de los elementos de la fila
 
         for (int i = 0; i < arrayInt.length; i++) {
@@ -23,11 +27,11 @@ public class ejercicio3 {
                 filaSum += arrayInt[i][a]; // Sumar los elementos de la fila
                 System.out.printf("    " + " %-8d ", arrayInt[i][a]);
             }
-
             totalSum += filaSum; // Sumar la fila al total
             System.out.printf("Fila %d: Suma = %-6d\n", i, filaSum);
             System.out.println();
         }
+
         for (int a = 0; a < arrayInt[0].length; a++) {
             int columMayor = arrayInt[0][a];
             for (int i = 0; i < arrayInt.length; i++) { // Recorrer las filas
@@ -43,6 +47,7 @@ public class ejercicio3 {
 
         System.out.println("  Suma total" + totalSum);
         System.out.println("--------------------------------------------------------------------------------------------------");
+
     }
 }
 
