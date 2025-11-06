@@ -1,5 +1,54 @@
+import java.util.Random;
+
 public class ejercicio4 {
-    public static void main(String[]args){
+    public static void main(String[]args) throws InterruptedException {
+
+        /*Modifica el programa anterior de tal forma que las sumas parciales y la suma
+        total aparezcan en la pantalla con un pequeño retraso, dando
+        la impresión de que el ordenador se queda “pensando” antes de mostrar los números.*/
+
+        System.out.println("--------------------------------------------------------------------------------------------------");
+
+        int[][] arrayInt =new int[4][5];
+        Random arrayRand = new Random();
+
+        for (int i = 0; i <arrayInt.length; i++) {
+            for (int a = 0; a < arrayInt[i].length; a++) {
+                arrayInt[i][a] = arrayRand.nextInt(999) +1;
+
+            }
+        }
+
+        int totalSum = 0;
+        int filaSum = 0; // Suma de los elementos de la fila
+
+        for (int i = 0; i < arrayInt.length; i++) {
+            for (int a = 0; a < arrayInt[i].length; a++) {
+                filaSum += arrayInt[i][a]; // Sumar los elementos de la fila
+                System.out.printf("    " + " %-8d ", arrayInt[i][a]);
+            }
+            totalSum += filaSum; // Sumar la fila al total
+            Thread.sleep(500);
+            System.out.printf("  Fila %d: Suma = %-6d\n", i, filaSum);
+            System.out.println();
+        }
+
+        for (int a = 0; a < arrayInt[0].length; a++) {
+            int columMayor = arrayInt[0][a];
+            for (int i = 0; i < arrayInt.length; i++) { // Recorrer las filas
+                if (arrayInt[i][a] > columMayor) {
+                    columMayor = arrayInt[i][a];
+                }
+            }
+
+            Thread.sleep(350);
+            System.out.printf("columna "  +  a  +": " + + columMayor + " ");
+
+
+        }
+        Thread.sleep(500);
+        System.out.println("  Suma total" + totalSum);
+        System.out.println("--------------------------------------------------------------------------------------------------");
 
     }
 }
