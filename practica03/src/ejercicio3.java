@@ -7,7 +7,6 @@ public class ejercicio3 {
         se generen de forma aleatoria (valores entre 1 y 1999).*/
 
 
-        System.out.println("--------------------------------------------------------------------------------------------------");
 
         int[][] arrayInt =new int[4][5];
         Random arrayRand = new Random();
@@ -23,6 +22,8 @@ public class ejercicio3 {
         int filaSum = 0; // Suma de los elementos de la fila
 
         for (int i = 0; i < arrayInt.length; i++) {
+            System.out.println("|-----------|-------------|-------------|-------------|-------------|---------------------------|");
+
             for (int a = 0; a < arrayInt[i].length; a++) {
                 filaSum += arrayInt[i][a]; // Sumar los elementos de la fila
                 System.out.printf("    " + " %-8d ", arrayInt[i][a]);
@@ -31,6 +32,7 @@ public class ejercicio3 {
             System.out.printf("     Fila %d: Suma = %-6d\n", i, filaSum);
             System.out.println();
         }
+        System.out.println("|----------------|----------------|----------------|----------------|----------------|----------|");
 
         for (int a = 0; a < arrayInt[0].length; a++) {
             int columMayor = arrayInt[0][a];
@@ -40,13 +42,14 @@ public class ejercicio3 {
                 }
             }
 
-            System.out.printf("columna "  +  a  +": " + + columMayor + " ");
+            System.out.printf("  columna "  +  a  +": " + + columMayor + " ");
 
 
         }
 
-        System.out.println("  Suma total" + totalSum);
-        System.out.println("--------------------------------------------------------------------------------------------------");
+        System.out.println("  Suma total = " + totalSum);
+        System.out.println();
+        System.out.println("|----------------|----------------|----------------|----------------|----------------|----------|");
 
     }
 }
