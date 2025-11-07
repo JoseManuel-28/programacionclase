@@ -12,29 +12,38 @@ public class ejercicio5 {
         La suma de todas las filas.
          */
 
-
+        // Se declara un array de 6 filas y 10 columnas y se inicializa
+        // Random para generar los números aleatorios
         int[][] arrayInt = new int[6][10];
         Random arrayRand = new Random();
 
+        // Se rellena el array con números aleatorios del 0 al 1000
         for (int i = 0; i < arrayInt.length; i++) {
             for (int a = 0; a < arrayInt[i].length; a++) {
                 arrayInt[i][a] = arrayRand.nextInt(1001);
             }
         }
 
+        // Variable para almacenar la suma total de todos los números del array y
+        // la variable para almacenar la suma de cada fila
         int totalSum = 0;
         int filaSum = 0;
 
+        // Se recorre el array para mostrar su contenido y calcular las sumas por fila
         for (int i = 0; i < arrayInt.length; i++) {
             System.out.println("|------------|-------------|-------------|--------------|------------|-------------|------------|--------------|------------|------------|---------------------------------------|");
             for (int a = 0; a < arrayInt[i].length; a++) {
-                filaSum += arrayInt[i][a]; // Sumar los elementos de la fila
+                filaSum += arrayInt[i][a];
                 System.out.printf("    " + " %-8d ", arrayInt[i][a]);
             }
-            totalSum += filaSum; // Sumar la fila al total
+
+            // Se añade la suma de la fila al total general
+            totalSum += filaSum;
             System.out.printf("     Fila %d: Suma = %-6d\n", i, filaSum);
             System.out.println();
         }
+
+        // Se calcula la suma de cada columna
         System.out.println("--------------|-------------|--------------|------------|-------------|-------------|-------------|--------------|------------|-------------|------------------------------------|");
         for (int a = 0; a < arrayInt[0].length; a++) {
             int sumColum = 0;
@@ -42,6 +51,7 @@ public class ejercicio5 {
                 sumColum += arrayInt[i][a];
             }
 
+            // Se muestra la suma de la columna actual
             System.out.printf("  colum "  + a +" " + sumColum);
             totalSum = sumColum + filaSum;
         }
@@ -50,6 +60,9 @@ public class ejercicio5 {
         System.out.println();
         System.out.println("--------------|-------------|--------------|------------|-------------|-------------|-------------|--------------|------------|-------------|------------------------------------|");
 
+        //se inicializan las  variables para guardar el valor mínimo y máximo encontrados
+        //y tambien se inicializan las variables
+        // para guardar la posición (fila y columna) del mínimo y del máximo
         int minum = arrayInt[0][0];
         int max = arrayInt[0][0];
         int filaMinum = 0;
@@ -57,6 +70,9 @@ public class ejercicio5 {
         int columMinum = 0;
         int columMax = 0;
 
+        // Se recorre el array para encontrar el número mayor y el menor
+        // si se encuentra un valor mayor, se actualizan las variables del máximo
+        // Si se encuentra un valor menor, se actualizan las variables del mínimo
         for (int i = 0; i < arrayInt.length; i++) {
             for (int a = 0; a < arrayInt[i].length; a++) {
                 if ( arrayInt[i][a] > max){

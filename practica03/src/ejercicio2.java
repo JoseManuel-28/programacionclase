@@ -44,19 +44,21 @@ public class ejercicio2 {
             System.out.println("|------------|-------------|-------------|-------------|--------------|------------------|");
         }
 
-        //Recorremos el array para
+        //Recorremos el array para encontrar el mayor de la columna
         for (int a = 0; a < arrayInt[0].length; a++) {
             int columMayor = arrayInt[0][a];
-            for (int i = 0; i < arrayInt.length; i++) { // Recorrer las filas
+            for (int i = 0; i < arrayInt.length; i++) {
                 if (arrayInt[i][a] > columMayor) {
                     columMayor = arrayInt[i][a];
                 }
             }
 
+            // se imprime por pantalla el mayor de la columna
             System.out.printf("columna "  +  a  +": " + + columMayor + " ");
 
             }
 
+        //se imprime por pantalla la suma total
         System.out.println("  Suma total" + totalSum);
         System.out.println("|------------|-------------|-------------|-------------|--------------|------------------|");
     }
