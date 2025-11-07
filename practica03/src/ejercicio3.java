@@ -28,7 +28,7 @@ public class ejercicio3 {
                 System.out.printf("    " + " %-8d ", arrayInt[i][a]);
             }
             totalSum += filaSum; // Sumar la fila al total
-            System.out.printf("Fila %d: Suma = %-6d\n", i, filaSum);
+            System.out.printf("     Fila %d: Suma = %-6d\n", i, filaSum);
             System.out.println();
         }
 

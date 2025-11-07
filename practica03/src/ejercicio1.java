@@ -8,24 +8,25 @@ public class ejercicio1 {
         //Inicializamos el array de tipo double para indiccar las 3 filas y las 7 columnas
        double[][] arraydoub = {
                 {0 , 30 , 2 , 1 , 1 , 5 },
-                {70 , 1 , 1 , 1 , 0 , 1 },
+                {75 , 1 , 1 , 1 , 0 , 1 },
                 {1 , 1 , -2 , 9 , 1 , 11 ,}
        };
-        System.out.println("---------------------------------------------------------------------------------------");
-        System.out.println("array num | " + "columna 0 |" + "columna 1 |" + "columna 2 | " + "columna 3 | " + "columna 4 | " + "columna 5 | ");
-        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("----------|---------|---------|---------|---------|----------|----------|");
+        System.out.println("array num  " + "columna 0 " + "columna 1 " + "columna 2 " + "columna 3 " + "columna 4  " + "columna 5  ");
+
         for (int i = 0; i < arraydoub.length; i++) {
-            System.out.print("fila " +  i  + "   ");
+            System.out.println("----------|---------|---------|---------|---------|----------|----------|");
+            System.out.print("fila " +  i  + "        ");
             for (int a = 0; a < arraydoub[i].length; a++) {
                 if (arraydoub[i][a] == 1) {
-                    System.out.print("  |        ");
+                    System.out.print("          ");
                 } else {
-                    System.out.printf(" | %-9.0f", arraydoub[i][a]);
+                    System.out.printf(" %-9.0f", arraydoub[i][a]);
                 }
             }
 
             System.out.println();
         }
-        System.out.println("---------------------------------------------------------------------------------------");
+        System.out.println("----------|---------|---------|---------|---------|----------|----------|");
     }
 }

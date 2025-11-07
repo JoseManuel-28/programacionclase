@@ -7,14 +7,14 @@ public class ejercicio4 {
         total aparezcan en la pantalla con un pequeño retraso, dando
         la impresión de que el ordenador se queda “pensando” antes de mostrar los números.*/
 
-        System.out.println("--------------------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------");
 
         int[][] arrayInt =new int[4][5];
         Random arrayRand = new Random();
 
         for (int i = 0; i <arrayInt.length; i++) {
             for (int a = 0; a < arrayInt[i].length; a++) {
-                arrayInt[i][a] = arrayRand.nextInt(999) +1;
+                arrayInt[i][a] = arrayRand.nextInt(1999) +1;
 
             }
         }
@@ -25,11 +25,13 @@ public class ejercicio4 {
         for (int i = 0; i < arrayInt.length; i++) {
             for (int a = 0; a < arrayInt[i].length; a++) {
                 filaSum += arrayInt[i][a]; // Sumar los elementos de la fila
-                System.out.printf("    " + " %-8d ", arrayInt[i][a]);
+                System.out.printf("    " + " %-10d ", arrayInt[i][a]);
             }
             totalSum += filaSum; // Sumar la fila al total
             Thread.sleep(500);
             System.out.printf("  Fila %d: Suma = %-6d\n", i, filaSum);
+            System.out.println();
+            System.out.println("-----------|---------------|------------------|-----------------|--------------|-----------------------");
             System.out.println();
         }
 
@@ -46,9 +48,11 @@ public class ejercicio4 {
 
 
         }
+
         Thread.sleep(500);
-        System.out.println("  Suma total" + totalSum);
-        System.out.println("--------------------------------------------------------------------------------------------------");
+        System.out.println("| " + "  Suma total" + totalSum);
+        System.out.println();
+        System.out.println("-------------------------------------------------------------------------------------------------------");
 
     }
 }

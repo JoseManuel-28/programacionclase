@@ -22,8 +22,8 @@ public class ejercicio2 {
                 {23, 57, 78, 12, 69},
                 {4, 8, 90, 46, 96}
         };
-        System.out.println("--------------------------------------------------------------------------------------------------");
 
+        System.out.println("|------------|-------------|-------------|-------------|--------------|------------------|");
 
         int totalSum = 0;
 
@@ -36,8 +36,8 @@ public class ejercicio2 {
             }
 
             totalSum += filaSum; // Sumar la fila al total
-            System.out.printf("Fila %d: Suma = %-6d\n", i, filaSum);
-            System.out.println();
+            System.out.printf(" Fila %d: Suma = %-6d\n", i, filaSum);
+            System.out.println("|------------|-------------|-------------|-------------|--------------|------------------|");
         }
         for (int a = 0; a < arrayInt[0].length; a++) {
             int columMayor = arrayInt[0][a];
@@ -49,11 +49,10 @@ public class ejercicio2 {
 
             System.out.printf("columna "  +  a  +": " + + columMayor + " ");
 
-
             }
 
         System.out.println("  Suma total" + totalSum);
-        System.out.println("--------------------------------------------------------------------------------------------------");
+        System.out.println("|------------|-------------|-------------|-------------|--------------|------------------|");
     }
 }
 
