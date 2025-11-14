@@ -11,8 +11,8 @@ public class Ejercicio07 {
         //y el total de los números negativos
         Scanner sc = new Scanner(System.in);
         int[] arrayInt = new int[10];
-        int totalPositive = 0;
-        int totalNegative = 0;
+        int totalPares = 0;
+        int totalInpares = 0;
 
         //Recorremos la longitud del array (i) para que el usuario lo rellene de números positivos y negativos
         for (int i = 0; i < arrayInt.length; i++) {
@@ -22,20 +22,20 @@ public class Ejercicio07 {
 
         //Volvemos a recorrer el array (a) para calcular la suma de todos los números positivos y negativos
         for (int a = 0; a < arrayInt.length; a++) {
-            if (arrayInt[a] > 0) {
-                totalPositive += arrayInt[a];
-            } else if (arrayInt[a] < 0) {
-                totalNegative += arrayInt[a];
+            if (arrayInt[a] %2 == 0) {
+                totalPares += arrayInt[a];
+            } else if (arrayInt[a] %2 != 0) {
+                totalInpares += arrayInt[a];
             }
         }
 
         //Indicamos por pantalla la suma de los números positivos y negativos
-        System.out.println("La suma de los números positivos son " + totalPositive);
-        System.out.println("La suma de los números negativos son " + totalNegative);
+        System.out.println("La suma de los números pares son " + totalPares);
+        System.out.println("La suma de los números inpares son " + totalInpares);
 
         //Inicializamos la media de los los números positivos y negativos
-        int averagePositive = totalPositive/arrayInt.length;
-        int averageNegative = totalNegative/arrayInt.length;
+        int averagePositive = totalPares/arrayInt.length;
+        int averageNegative = totalInpares/arrayInt.length;
 
         //Indicamos por pantalla la media de los números positivos y los nùmeros negativos
         System.out.println("La media de los números positivos es " + averagePositive);
