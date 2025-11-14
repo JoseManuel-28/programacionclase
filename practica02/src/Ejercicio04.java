@@ -1,4 +1,3 @@
-package programacionclase.src.practica02;
 
 
 public class Ejercicio04 {

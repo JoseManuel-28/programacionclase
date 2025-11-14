@@ -1,4 +1,3 @@
-package programacionclase.src.practica02;
 
 import java.util.Scanner;
 
