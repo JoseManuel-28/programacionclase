@@ -1,5 +1,5 @@
 public class Usuario {
-
+    //Atributos
     private String nombre;
     private String apellidos;
     private String codigoPostal;
@@ -7,27 +7,26 @@ public class Usuario {
     private String email;
     private String contrasena;
 
-    public Usuario(String no, String ap, String cP, String di, String em, String co) {
-        nombre = no;
-        apellidos = ap;
-        codigoPostal = cP;
-        direccion = di;
-        email = em;
-        contrasena = co;
+    //Constructor
+    public Usuario (String no, String ap, String cP, String di, String em, String co) {
+        this.nombre = no;
+        this.apellidos = ap;
+        this.codigoPostal = cP;
+        this.direccion = di;
+        this.email = em;
+        this.contrasena = co;
     }
 
-    public String getNombre() {
+    //Métodos get y set
+    public String getNombre () {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public String getApellidos() {
         return apellidos;
     }
-
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
@@ -47,12 +46,19 @@ public class Usuario {
         return email;
     }
     public void setEmail(String email){
-        this.email = email;
+        if (email.contains("@")) {
+            this.email = email;
+        } else{
+            System.out.println("Error: email inválido. NO contiene @");
+        }
     }
     public String getContrasena(){
         return email;
     }
     public void setContrasena(String constrasena){
         this.contrasena = constrasena;
+    }
+    public boolean checkUsuario (String email, String contrasena){
+        return this.getEmail().equals(email) && this.contrasena.equals(contrasena);
     }
 }
