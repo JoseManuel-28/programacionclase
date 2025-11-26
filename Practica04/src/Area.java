@@ -1,6 +1,12 @@
 public class Area {
 
 
+    /*
+    Aera a1 = new Area (...)
+    Area a2 = new Area (...)
+    Arraylist <Area> areas = { a1, a2, a3 }0
+     */
+
     //Atributos
     private String nombre;
     private String identificador;
