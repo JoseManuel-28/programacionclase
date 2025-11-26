@@ -3,13 +3,13 @@ import java.util.ArrayList;
 
 public class Hospital {
     //Atributo
-    private static String nombre;
-    private static String CIF;
-    private static ArrayList <Area> arrayArea = new ArrayList<>();
+    private String nombre;
+    private String CIF;
+    private ArrayList <Area> arrayArea = new ArrayList<Area>();
 
 
     //Constructor
-    public Hospital (String nom, String CIF, ArrayList arr){
+    public Hospital (String nom, String CIF, ArrayList<Area> arr){
         this.nombre = nom;
         this.CIF = CIF;
         this.arrayArea = arr;
@@ -17,25 +17,25 @@ public class Hospital {
 
 
     //Getter
-    public static String getNombre() {
+    public String getNombre() {
         return nombre;
     }
-    public static String getCIF() {
+    public String getCIF() {
         return CIF;
     }
-    public static ArrayList<Area> getArrayArea() {
+    public ArrayList<Area> getArrayArea() {
         return arrayArea;
     }
 
 
     //Setter
-    public static void setNombre(String nombre) {
+    public void setNombre(String nombre) {
         Hospital.nombre = nombre;
     }
-    public static void setCIF(String CIF) {
+    public void setCIF(String CIF) {
         Hospital.CIF = CIF;
     }
-    public static void setArrayArea(ArrayList<Area> arrayArea) {
+    public void setArrayArea(ArrayList<Area> arrayArea) {
         Hospital.arrayArea = arrayArea;
     }
 }

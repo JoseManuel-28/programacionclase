@@ -18,6 +18,10 @@ public class Area {
         this.numMedicos = 0;
     }
 
+    public void contadorNumMedicos() {
+        this.numMedicos++;
+    }
+
 
     //Getter
     public String getNombre() {
@@ -49,8 +53,5 @@ public class Area {
     }
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
-    }
-    public void contadorNumMedicos() {
-        this.numMedicos++;
     }
 }

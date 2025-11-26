@@ -1,5 +1,18 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main (String[] args){
-        Direccion d1 = new Direccion("calle platero",5 ,11405, "Sevilla", "Cadiz" );
+
+        ArrayList<Area> array = new ArrayList<Area>();
+
+/*        Hospital h = new Hospital()
+        Area a = new Area("j","ed",2)
+
+        Hospital h = new Hospital("j", "34343b",array);
+
+        Medico m = new Medico();
+
+        m.calcularSueldoNeto(35.8)*/
+
     }
 }

@@ -1,13 +1,11 @@
 public class Medico {
-
-
     //Atributos
-    private static String DNI;
-    private static String nombre;
-    private static  int edad;
-    private static String sexo;
-    private static double sueldoBruto;
-    private static String anoDeinicio;
+    private String DNI;
+    private String nombre;
+    private int edad;
+    private String sexo;
+    private double sueldoBruto;
+    private String anoDeinicio;
     private Area area;
 
 
@@ -20,51 +18,74 @@ public class Medico {
         this.sueldoBruto = sB;
         this.anoDeinicio = anDeIn;
         this.area =ar;
+
         area.contadorNumMedicos();
+        this.calcularSueldoNeto(45.5);
     }
 
+    public double calcularSueldoNeto(double retencion){
+        double quitarSueldo = (100*retencion)/this.sueldoBruto;
+        return this.sueldoBruto - quitarSueldo;
+    }
 
-    //Getter
-    public static String getDNI() {
+    public boolean esMayorDeEdad(int mayoriaDeEdad){
+        return this.edad >= mayoriaDeEdad;
+    }
+
+    public String getDNI() {
         return DNI;
     }
-    public static String getNombre() {
-        return nombre;
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
     }
-    public static int getEdad() {
-        return edad;
-    }
-    public static String getSexo() {
-        return sexo;
-    }
-    public static double getSueldoBruto() {
-        return sueldoBruto;
-    }
-    public static String getAnoDeinicio() {
-        return anoDeinicio;
-    }
+
     public Area getArea() {
         return area;
     }
 
-
-    //Setter
-    public static void setNombre(String nombre) {
-        Medico.nombre = nombre;
-    }
-    public static void setEdad(int edad) {
-        Medico.edad = edad;
-    }
-    public static void setSexo(String sexo) {
-        Medico.sexo = sexo;
-    }
-    public static void setSueldoBruto(double sueldoBruto) {
-        Medico.sueldoBruto = sueldoBruto;
-    }
-    public static void setAnoDeinicio(String anoDeinicio) {
-        Medico.anoDeinicio = anoDeinicio;
-    }
     public void setArea(Area area) {
         this.area = area;
     }
+
+    public String getAnoDeinicio() {
+        return anoDeinicio;
+    }
+
+    public void setAnoDeinicio(String anoDeinicio) {
+        this.anoDeinicio = anoDeinicio;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getSueldoBruto() {
+        return sueldoBruto;
+    }
+
+    public void setSueldoBruto(double sueldoBruto) {
+        this.sueldoBruto = sueldoBruto;
+    }
+
 }
