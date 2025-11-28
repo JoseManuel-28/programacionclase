@@ -5,24 +5,24 @@ public class Hospital {
     //Atributo
     private String nombre;
     private String CIF;
-    private ArrayList <Area> arrayArea = new ArrayList<Area>();
+    private ArrayList<Area> arrayArea;
 
 
     //Constructor
-    public Hospital (String nom, String CIF, ArrayList<Area> arr){
+    public Hospital (String nom, String CIF){
         this.nombre = nom;
         this.CIF = CIF;
-        this.arrayArea = arr;
+        this.arrayArea = new ArrayList();
     }
-
-
     //Getter
     public String getNombre() {
         return nombre;
     }
+
     public String getCIF() {
         return CIF;
     }
+
     public ArrayList<Area> getArrayArea() {
         return arrayArea;
     }
@@ -30,12 +30,14 @@ public class Hospital {
 
     //Setter
     public void setNombre(String nombre) {
-        Hospital.nombre = nombre;
+        this.nombre = nombre;
     }
+
     public void setCIF(String CIF) {
-        Hospital.CIF = CIF;
+        this.CIF = CIF;
     }
+
     public void setArrayArea(ArrayList<Area> arrayArea) {
-        Hospital.arrayArea = arrayArea;
+        this.arrayArea = arrayArea;
     }
 }

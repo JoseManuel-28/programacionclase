@@ -7,10 +7,11 @@ public class Medico {
     private double sueldoBruto;
     private String anoDeinicio;
     private Area area;
+    private int aniosDeAntiguedad;
 
 
     //Constructor
-    public Medico (String DNI, String nom, int ed, String sex, double sB, String anDeIn, Area ar ){
+    public Medico (String DNI, String nom, int ed, String sex, double sB, String anDeIn, Area ar, int aniosDeAntiguedad ){
         this.DNI = DNI;
         this.nombre = nom;
         this.edad = ed;
