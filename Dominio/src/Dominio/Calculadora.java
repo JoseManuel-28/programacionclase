@@ -1,5 +1,6 @@
+package Dominio;
 public class Calculadora {
-    public int Sumar (int a, int b){
+    public int sumar  (int a, int b){
         return a +b;
     }
 }
