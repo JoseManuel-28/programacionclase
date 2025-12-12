@@ -1,4 +1,3 @@
-package programacionclase.src.practica02;
 
 import java.util.Scanner;
 
@@ -27,10 +26,11 @@ public class Ejercicio11 {
         }
 
         //Se invierte  el orden de los elementos
+        int[] invierte = arrayInt;
         for (int i = 0; i < arrayInt.length / 2; i++) {
-            int backup = arrayInt[i];
-            arrayInt[i] = arrayInt[arrayInt.length - 1 - i];
-            arrayInt[arrayInt.length - 1 - i] = backup;
+            if (invierte[i] == arrayInt[arrayInt.length / 2] - 1 - i){
+                System.out.println("array invertido" + invierte);
+            }
         }
 
         //Se muestra por pantalla el array invertido
