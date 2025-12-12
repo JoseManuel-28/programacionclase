@@ -36,6 +36,21 @@ public class ejercicio5 {
                 filaSum += arrayInt[i][a];
                 System.out.printf("    " + " %-8d ", arrayInt[i][a]);
             }
+            if (i % 2 == 0) {
+                int suma = 0;
+                for (int a = 0; a < arrayInt[i].length; a++) {
+                    suma += arrayInt[i][a];
+                } double media = suma / arrayInt.length;
+                System.out.println(" fila par = " + i + media);
+            }else {
+                int minimo = arrayInt[i][0];
+                for (int a = 0; a < arrayInt[i].length; a++){
+                    if ( arrayInt[i][a] < minimo){
+                        minimo = arrayInt[i][a];
+                    }
+
+                } System.out.println("fila impar = " + minimo);
+            }
 
             // Se añade la suma de la fila al total general
             totalSum += filaSum;
@@ -87,7 +102,8 @@ public class ejercicio5 {
 
             }
         }
-
+//filas pares calculo de la media a la derecha
+        // y en las filas impares minimo
         System.out.println("El número mayor es " + max + " posicion " + filaMax + "" + columMax);
         System.out.println("El número menor es " + minum + " posicion " + filaMinum + "" + columMinum);
 
