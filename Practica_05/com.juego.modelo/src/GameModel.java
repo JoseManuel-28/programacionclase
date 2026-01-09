@@ -23,6 +23,7 @@ public class GameModel {
         createRoles();
     }
 
+    //Nombre de los items utilizado
     private void createItems(){
         items[0] = new Item("Poción de Vida", 20,0,0,0);
         items[1] = new Item("Poción de Mana", 0,0,20,0);
@@ -30,6 +31,7 @@ public class GameModel {
         items[3] = new Item("Totem Defensa", 0,0,0,20);
     }
 
+    //Nombre de estados que se pueden aplicar
     private void createStates(){
         statesToApply[0] = new StatesToApply("Envenenamiento", 20, 2, 20, 0);
         statesToApply[1] = new StatesToApply("Paralisis", 20, 0, 0, 2);
@@ -37,8 +39,9 @@ public class GameModel {
         statesToApply[3] = new StatesToApply("Quemado", 20, 1, 10, 0);
     }
 
+
+    //ROGUE SKILLS
     private void createSkills(){
-        //ROGUE SKILLS
         rogueSkills[0] = new Skill("Ataque Espalda", 20, 20, 0,0,0,null);
         rogueSkills[1] = new Skill("Sigilo", 0, 20, 0,0,1,null);
         rogueSkills[2] = new Skill("Puñalada Rápida", 20, 20, 0,0,0,null);
