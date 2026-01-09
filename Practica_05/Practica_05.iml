@@ -3,12 +3,14 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/com.juego.clases/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/com.juego.habilidades/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/com.juego.modelo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/com.juego.presentacion/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/com.juego.razas/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="com.juego.clases" />
-    <orderEntry type="module" module-name="com.juego.modelo" />
-    <orderEntry type="module" module-name="com.juego.presentacion" />
   </component>
 </module>

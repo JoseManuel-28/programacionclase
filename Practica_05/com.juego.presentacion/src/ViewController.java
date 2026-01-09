@@ -8,7 +8,7 @@ public class ViewController {
         gameController = new GameController();
         gameModel = new GameModel();
 
-        //init();
+        init();
         createCharacter();
     }
 
