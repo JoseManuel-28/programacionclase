@@ -1,37 +1,43 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Character {
-    public String name;
-    public int age;
-    public Role role;
-    public Race race;
-    public Sex sex;
+    private final String name;
+    private final Role role;
+    private final Race race;
 
-    public int health;
-    public int mana;
-    public int attack;
-    public int defense;
-    public List<States> activeStates = new ArrayList<>();
-    public boolean isParalyzed = false;
+    private int health;
+    private int mana;
+    private final int attack;
+    private final int defense;
+    private final List<BaseStates> activeStates = new ArrayList<>();
+    private boolean isParalyzed = false;
 
-    public Character(String name, int age, Sex sex, Role role, Race race) {
+    public Character(String name, Role role, Race race) {
         this.name = name;
-        this.age = age;
-        this.sex = sex;
         this.role = role;
         this.race = race;
 
-        this.health = role.health;
-        this.mana = role.mana;
-        this.attack = role.attack;
-        this.defense = role.defense;
+        this.health = role.getHealth();
+        this.mana = role.getMana();
+        this.attack = role.getAttack();
+        this.defense = role.getDefense();
     }
 
+    // Getters
+    public String getName() { return name; }
+    public int getHealth() { return health; }
+    public int getMana() { return mana; }
+    public int getAttack() { return attack; }
+    public Role getRole() { return role; }
+    public Race getRace() { return race; }
+    public boolean isParalyzed() { return isParalyzed; }
+
     public int takeDamage(int damage) {
-        int finalDamage = damage - defense;
+        int finalDamage = damage - this.defense;
         if (finalDamage < 1) {
-            finalDamage = 1; // Asegura que siempre se haga al menos 1 de daño
+            finalDamage = 1;
         }
         this.health -= finalDamage;
         if (this.health < 0) {
@@ -41,34 +47,35 @@ public class Character {
     }
 
     public void applyState(StatesToApply stateToApply) {
-        // Aquí podrías añadir una lógica de probabilidad si quieres
-        States newState = new States(stateToApply.name, stateToApply.turnsDamageDuration, stateToApply.turnDamage, stateToApply.turnWithoutAttack);
+        BaseStates newState = new BaseStates(stateToApply.getName(), stateToApply.getTurnsDamageDuration(), stateToApply.getTurnDamage(), stateToApply.getTurnWithoutAttack());
         activeStates.add(newState);
-        System.out.println("¡" + name + " ahora está " + stateToApply.name + "!");
+        System.out.println("¡" + name + " ahora está " + stateToApply.getName() + "!");
     }
 
     public void processStates() {
-        isParalyzed = false;
-        List<States> statesToRemove = new ArrayList<>();
+        this.isParalyzed = false;
+        Iterator<BaseStates> iterator = activeStates.iterator();
 
-        for (States state : activeStates) {
-            if (state.turnDamage > 0) {
-                this.health -= state.turnDamage;
-                System.out.println(name + " sufre " + state.turnDamage + " de daño por " + state.name + ".");
+        while (iterator.hasNext()) {
+            BaseStates state = iterator.next();
+            if (state.getTurnDamage() > 0) {
+                this.health -= state.getTurnDamage();
+                System.out.println(name + " sufre " + state.getTurnDamage() + " de daño por " + state.getName() + ".");
             }
-            if (state.turnWithoutAttack > 0) {
-                isParalyzed = true;
+            if (state.getTurnWithoutAttack() > 0) {
+                this.isParalyzed = true;
             }
 
-            state.turnsDamageDuration--;
-            if (state.turnsDamageDuration <= 0) {
-                statesToRemove.add(state);
+            state.setTurnsDamageDuration(state.getTurnsDamageDuration() - 1);
+            if (state.getTurnsDamageDuration() <= 0) {
+                System.out.println("El efecto '" + state.getName() + "' ha desaparecido de " + name + ".");
+                iterator.remove();
             }
         }
-
-        for (States state : statesToRemove) {
-            activeStates.remove(state);
-            System.out.println("El efecto '" + state.name + "' ha desaparecido de " + name + ".");
-        }
+        if (this.health < 0) this.health = 0;
+    }
+    
+    public void consumeMana(int manaCost) {
+        this.mana -= manaCost;
     }
 }

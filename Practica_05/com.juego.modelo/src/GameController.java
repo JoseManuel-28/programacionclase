@@ -5,54 +5,55 @@ public class GameController {
 
     private static final int CRITICAL_CHANCE = 15; // Probabilidad de crítico (en porcentaje)
     private Random random = new Random();
+    private Scanner scanner = new Scanner(System.in);
 
     public void startCombat(Character player, Character enemy) {
         System.out.println("\n=============================================");
         System.out.println("          ¡COMIENZA EL COMBATE!");
         System.out.println("=============================================");
-        System.out.println(player.name + " vs " + enemy.name);
+        System.out.println(player.getName() + " vs " + enemy.getName());
         System.out.println("=============================================\n");
 
-        while (player.health > 0 && enemy.health > 0) {
+        while (player.getHealth() > 0 && enemy.getHealth() > 0) {
             // Turno del jugador
-            System.out.println(">>> TURNO DE " + player.name + " <<<");
+            System.out.println(">>> TURNO DE " + player.getName() + " <<<");
             player.processStates();
-            if (player.health <= 0) {
-                System.out.println("¡" + player.name + " ha caído por los efectos de un estado!");
+            if (player.getHealth() <= 0) {
+                System.out.println("¡" + player.getName() + " ha caído por los efectos de un estado!");
                 break;
             }
 
-            if (!player.isParalyzed) {
+            if (!player.isParalyzed()) {
                 playerTurn(player, enemy);
             } else {
-                System.out.println("¡" + player.name + " está paralizado y no puede moverse!");
+                System.out.println("¡" + player.getName() + " está paralizado y no puede moverse!");
             }
             
-            if (enemy.health <= 0) {
+            if (enemy.getHealth() <= 0) {
                 System.out.println("\n---------------------------------------------");
-                System.out.println("¡" + enemy.name + " ha sido derrotado!");
-                System.out.println("¡HAS GANADO EL COMBATE, " + player.name + "!");
+                System.out.println("¡" + enemy.getName() + " ha sido derrotado!");
+                System.out.println("¡HAS GANADO EL COMBATE, " + player.getName() + "!");
                 System.out.println("---------------------------------------------\n");
                 break;
             }
 
             // Turno del enemigo
-            System.out.println(">>> TURNO DE " + enemy.name + " <<<");
+            System.out.println(">>> TURNO DE " + enemy.getName() + " <<<");
             enemy.processStates();
-            if (enemy.health <= 0) {
-                System.out.println("¡" + enemy.name + " ha caído por los efectos de un estado!");
+            if (enemy.getHealth() <= 0) {
+                System.out.println("¡" + enemy.getName() + " ha caído por los efectos de un estado!");
                 break;
             }
 
-            if (!enemy.isParalyzed) {
+            if (!enemy.isParalyzed()) {
                 enemyTurn(enemy, player);
             } else {
-                System.out.println("¡" + enemy.name + " está paralizado y no puede moverse!");
+                System.out.println("¡" + enemy.getName() + " está paralizado y no puede moverse!");
             }
 
-            if (player.health <= 0) {
+            if (player.getHealth() <= 0) {
                 System.out.println("\n---------------------------------------------");
-                System.out.println("¡" + player.name + " ha sido derrotado!");
+                System.out.println("¡" + player.getName() + " ha sido derrotado!");
                 System.out.println("¡HAS PERDIDO EL COMBATE!");
                 System.out.println("---------------------------------------------\n");
                 break;
@@ -62,8 +63,8 @@ public class GameController {
 
     private void showStatus(Character player, Character enemy) {
         System.out.println("--- ESTADO DEL COMBATE ---");
-        System.out.println(player.name + " - Vida: " + player.health + " | Maná: " + player.mana);
-        System.out.println(enemy.name + " - Vida: " + enemy.health);
+        System.out.println(player.getName() + " - Vida: " + player.getHealth() + " | Maná: " + player.getMana());
+        System.out.println(enemy.getName() + " - Vida: " + enemy.getHealth());
         System.out.println("--------------------------\n");
     }
 
@@ -75,8 +76,12 @@ public class GameController {
         System.out.println("  2. Usar habilidad");
         System.out.print("Tu elección: ");
 
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
+        int choice = -1;
+        if (scanner.hasNextInt()) {
+            choice = scanner.nextInt();
+        } else {
+            scanner.next(); // Consumir entrada inválida
+        }
         System.out.println();
 
         switch (choice) {
@@ -94,7 +99,7 @@ public class GameController {
     }
 
     private void attack(Character attacker, Character defender) {
-        int damageDealt = calculateAttackDamage(attacker.attack);
+        int damageDealt = calculateAttackDamage(attacker.getAttack());
         boolean isCritical = random.nextInt(100) < CRITICAL_CHANCE;
 
         if (isCritical) {
@@ -103,7 +108,7 @@ public class GameController {
         }
 
         int finalDamage = defender.takeDamage(damageDealt);
-        System.out.println("¡" + attacker.name + " ataca a " + defender.name + " y le inflige " + finalDamage + " puntos de daño!");
+        System.out.println("¡" + attacker.getName() + " ataca a " + defender.getName() + " y le inflige " + finalDamage + " puntos de daño!");
     }
 
     private int calculateAttackDamage(int baseAttack) {
@@ -115,41 +120,45 @@ public class GameController {
 
     private void useSkill(Character player, Character enemy) {
         System.out.println("Elige una habilidad para usar:");
-        for (int i = 0; i < player.role.skills.length; i++) {
-            Skill skill = player.role.skills[i];
+        Skill[] skills = player.getRole().getSkills();
+        for (int i = 0; i < skills.length; i++) {
+            Skill skill = skills[i];
             if (skill != null) {
-                 System.out.println("  " + (i + 1) + ". " + skill.name + " (Coste: " + skill.consumptionMana + " Maná, Usos: " + skill.uses + ")");
+                 System.out.println("  " + (i + 1) + ". " + skill.getName() + " (Coste: " + skill.getConsumptionMana() + " Maná, Usos: " + skill.getUses() + ")");
             }
         }
         System.out.print("Tu elección: ");
 
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt() - 1;
+        int choice = -1;
+        if (scanner.hasNextInt()) {
+            choice = scanner.nextInt() - 1;
+        } else {
+            scanner.next(); // Consumir entrada inválida
+        }
         System.out.println();
 
-        if (choice >= 0 && choice < player.role.skills.length && player.role.skills[choice] != null) {
-            Skill skill = player.role.skills[choice];
-            if (skill.uses > 0) {
-                if (player.mana >= skill.consumptionMana) {
-                    player.mana -= skill.consumptionMana;
-                    skill.uses--;
-                    int finalDamage = enemy.takeDamage(skill.damage);
-                    System.out.println("¡Usas '" + skill.name + "'! Infliges " + finalDamage + " de daño a " + enemy.name + ".");
+        if (choice >= 0 && choice < skills.length && skills[choice] != null) {
+            Skill skill = skills[choice];
+            if (skill.getUses() > 0) {
+                if (player.getMana() >= skill.getConsumptionMana()) {
+                    player.consumeMana(skill.getConsumptionMana());
+                    skill.use();
+                    int finalDamage = enemy.takeDamage(skill.getDamage());
+                    System.out.println("¡Usas '" + skill.getName() + "'! Infliges " + finalDamage + " de daño a " + enemy.getName() + ".");
                     
                     // Aplicar estados si la habilidad los tiene
-                    if (skill.statesToApply != null) {
-                        for (StatesToApply state : skill.statesToApply) {
-                            // Aquí usamos la probabilidad definida en el estado
-                            if (random.nextInt(100) < state.probabilityApplying) {
+                    if (skill.getStatesToApply() != null) {
+                        for (StatesToApply state : skill.getStatesToApply()) {
+                            if (random.nextInt(100) < state.getProbabilityApplying()) {
                                 enemy.applyState(state);
                             }
                         }
                     }
                 } else {
-                    System.out.println("¡No tienes suficiente maná para usar '" + skill.name + "'!");
+                    System.out.println("¡No tienes suficiente maná para usar '" + skill.getName() + "'!");
                 }
             } else {
-                System.out.println("¡No te quedan usos de '" + skill.name + "'!");
+                System.out.println("¡No te quedan usos de '" + skill.getName() + "'!");
             }
         } else {
             System.out.println("¡Habilidad no válida! Pierdes el turno.");
@@ -157,7 +166,34 @@ public class GameController {
     }
 
     private void enemyTurn(Character enemy, Character player) {
-        attack(enemy, player);
+        // IA simple: 30% de probabilidad de usar una habilidad si tiene maná y usos
+        boolean usedSkill = false;
+        if (random.nextInt(100) < 30) {
+            Skill[] skills = enemy.getRole().getSkills();
+            // Intentar encontrar una habilidad usable
+            for (Skill skill : skills) {
+                if (skill != null && skill.getUses() > 0 && enemy.getMana() >= skill.getConsumptionMana()) {
+                    enemy.consumeMana(skill.getConsumptionMana());
+                    skill.use();
+                    int finalDamage = player.takeDamage(skill.getDamage());
+                    System.out.println("¡" + enemy.getName() + " usa '" + skill.getName() + "'! Te inflige " + finalDamage + " de daño.");
+                    
+                    if (skill.getStatesToApply() != null) {
+                        for (StatesToApply state : skill.getStatesToApply()) {
+                            if (random.nextInt(100) < state.getProbabilityApplying()) {
+                                player.applyState(state);
+                            }
+                        }
+                    }
+                    usedSkill = true;
+                    break; 
+                }
+            }
+        }
+
+        if (!usedSkill) {
+            attack(enemy, player);
+        }
         System.out.println("---------------------------------------------\n");
     }
 }

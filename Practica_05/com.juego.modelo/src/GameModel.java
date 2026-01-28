@@ -2,18 +2,18 @@ import java.util.ArrayList;
 
 public class GameModel {
     //ITEMS
-    public Item[] items = new Item[4];
+    private Item[] items = new Item[4];
     //STATES
-    public StatesToApply[] statesToApply = new StatesToApply[4];
+    private StatesToApply[] statesToApply = new StatesToApply[4];
     // SKILLS
-    public Skill[] rogueSkills = new Skill[4];
-    public Skill[] wizardSkills = new Skill[4];
-    public Skill[] knightSkills = new Skill[4];
-    public Skill[] archerSkills = new Skill[4];
+    private Skill[] rogueSkills = new Skill[4];
+    private Skill[] wizardSkills = new Skill[4];
+    private Skill[] knightSkills = new Skill[4];
+    private Skill[] archerSkills = new Skill[4];
     //RACES
-    public Race[] races = new Race[4];
+    private Race[] races = new Race[4];
     //ROLES
-    public Role[] roles = new Role[4];
+    private Role[] roles = new Role[4];
 
     public GameModel(){
         createItems();
@@ -22,6 +22,9 @@ public class GameModel {
         createRaces();
         createRoles();
     }
+
+    public Race[] getRaces() { return races; }
+    public Role[] getRoles() { return roles; }
 
     //Nombre de los items utilizado
     private void createItems(){
