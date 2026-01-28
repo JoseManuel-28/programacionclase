@@ -33,42 +33,47 @@ public class GameModel {
 
     //Nombre de estados que se pueden aplicar
     private void createStates(){
-        statesToApply[0] = new StatesToApply("Envenenamiento", 20, 2, 20, 0);
-        statesToApply[1] = new StatesToApply("Paralisis", 20, 0, 0, 2);
-        statesToApply[2] = new StatesToApply("Congelacion", 20, 1, 5, 1);
-        statesToApply[3] = new StatesToApply("Quemado", 20, 1, 10, 0);
+        statesToApply[0] = new StatesToApply("Envenenamiento", 70, 3, 10, 0); // 70% prob, 3 turnos, 10 daño/turno
+        statesToApply[1] = new StatesToApply("Paralisis", 50, 0, 0, 2); // 50% prob, 2 turnos sin atacar
+        statesToApply[2] = new StatesToApply("Congelacion", 60, 2, 5, 1); // 60% prob, 2 turnos, 5 daño/turno, 1 turno sin atacar
+        statesToApply[3] = new StatesToApply("Quemado", 80, 2, 15, 0); // 80% prob, 2 turnos, 15 daño/turno
     }
 
 
     //ROGUE SKILLS
     private void createSkills(){
-        rogueSkills[0] = new Skill("Ataque Espalda", 20, 20, 0,0,0,null);
-        rogueSkills[1] = new Skill("Sigilo", 0, 20, 0,0,1,null);
-        rogueSkills[2] = new Skill("Puñalada Rápida", 20, 20, 0,0,0,null);
-        rogueSkills[3] = new Skill("Huir", 0, 20, 0,0,2,null);
+        rogueSkills[0] = new Skill("Ataque Espalda", 35, 20, 0,0,0,5,null);
+        rogueSkills[1] = new Skill("Sigilo", 0, 20, 0,0,1,3,null);
+        rogueSkills[2] = new Skill("Puñalada Rápida", 25, 20, 0,0,0,5,null);
+        rogueSkills[3] = new Skill("Huir", 0, 20, 0,0,2,3,null);
 
         //KNIGHT SKILLS
-        knightSkills[0] = new Skill("Golpe Firme", 20, 20, 0,0,0,null);
-        knightSkills[1] = new Skill("Guardia", 0, 20, 20,0,0,null);
-        knightSkills[2] = new Skill("Carga", 40, 20, 0,0,1,null);
-        knightSkills[3] = new Skill("Corte Preciso", 30, 20, 0,0,0,null);
+        knightSkills[0] = new Skill("Golpe Firme", 30, 20, 0,0,0,5,null);
+        knightSkills[1] = new Skill("Guardia", 0, 20, 20,0,0,3,null);
+        knightSkills[2] = new Skill("Carga", 50, 20, 0,0,1,5,null);
+        knightSkills[3] = new Skill("Corte Preciso", 45, 20, 0,0,0,5,null);
 
         //ARCHER SKILLS
-        archerSkills[0] = new Skill("Disparo Preciso", 20, 20, 0,0,0,null);
-        archerSkills[1] = new Skill("Lluvia de Flechas", 20, 20, 0,0,0, null);
+        ArrayList<StatesToApply> poisonArrowStates = new ArrayList<>();
+        poisonArrowStates.add(statesToApply[0]);
+        archerSkills[0] = new Skill("Disparo Preciso", 30, 20, 0,0,0,5,null);
+        archerSkills[1] = new Skill("Lluvia de Flechas", 35, 20, 0,0,0, 5, null);
+        archerSkills[2] = new Skill("Disparo Perforante", 50, 30, 0,0,0, 5, null);
+        archerSkills[3] = new Skill("Flecha Venenosa", 20, 25, 0,0,0, 5, poisonArrowStates);
+
 
         //WIZARD SKILLS
-        ArrayList<StatesToApply> fireBallStates = new ArrayList<StatesToApply>();
+        ArrayList<StatesToApply> fireBallStates = new ArrayList<>();
         fireBallStates.add(statesToApply[3]);
-        wizardSkills[0] = new Skill("Bola de fuego",20,40,0,0,0,fireBallStates);
+        wizardSkills[0] = new Skill("Bola de fuego",45,40,0,0,0,5,fireBallStates);
 
-        wizardSkills[0] = new Skill("Escudo Arcano",0,40,20,0,0,null);
+        wizardSkills[1] = new Skill("Escudo Arcano",0,40,20,0,0,3,null);
 
-        ArrayList<StatesToApply> boltStates = new ArrayList<StatesToApply>();
-        fireBallStates.add(statesToApply[1]);
-        wizardSkills[0] = new Skill("Rayo",20,40,0,0,0,boltStates);
+        ArrayList<StatesToApply> boltStates = new ArrayList<>();
+        boltStates.add(statesToApply[1]);
+        wizardSkills[2] = new Skill("Rayo Paralizante",30,40,0,0,0,5,boltStates);
 
-        wizardSkills[0] = new Skill("Concentración",0,40,0,20,0,null);
+        wizardSkills[3] = new Skill("Concentración",0,40,0,20,0,3,null);
     }
 
     private void createRaces(){
@@ -79,12 +84,9 @@ public class GameModel {
     }
 
     private void createRoles(){
-        roles[0] = new Role("Caballero", 200, 100, 100, 10,knightSkills,new ArrayList<>());
-        roles[1] = new Role("Mago", 200, 100, 100, 10, wizardSkills, new ArrayList<>() );
-        roles[2] = new Role("Arquero", 200, 100, 100, 10, archerSkills, new ArrayList<>() );
-        roles[3] = new Role("Picaro", 200, 100, 100, 10, rogueSkills, new ArrayList<>() );
-
+        roles[0] = new Role("Caballero", 200, 12, 200, 25,knightSkills,new ArrayList<>());
+        roles[1] = new Role("Mago", 200, 5, 200, 12, wizardSkills, new ArrayList<>() );
+        roles[2] = new Role("Arquero", 200, 8, 200, 22, archerSkills, new ArrayList<>() );
+        roles[3] = new Role("Picaro", 200, 6, 200, 20, rogueSkills, new ArrayList<>() );
     }
 }
-
-

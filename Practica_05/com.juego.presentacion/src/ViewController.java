@@ -9,7 +9,9 @@ public class ViewController {
         gameModel = new GameModel();
 
         init();
-        createCharacter();
+        Character player = createCharacter();
+        Character enemy = new Character("Enemigo", 25, null, player.role, player.race);
+        gameController.startCombat(player, enemy);
     }
 
     private void init(){
@@ -30,7 +32,7 @@ public class ViewController {
         sc.nextLine(); // Escuchamos el Enter por teclado
     }
 
-    private void createCharacter() {
+    private Character createCharacter() {
         Scanner sc_name = new Scanner(System.in);
         System.out.println("Introduce el nombre del personaje");
         String name = sc_name.next();
@@ -38,9 +40,7 @@ public class ViewController {
         Race created_race = createRace();
         Role created_role = createRole();
 
-        //Character character = new Character(name,null,null,created_role,created_race);
-        //Character character2 = new Character(name,null,null,created_role,created_race);
-        //gameController.characters
+        return new Character(name,25,null,created_role,created_race);
     }
 
     private Race createRace(){
@@ -99,4 +99,3 @@ public class ViewController {
         }
     }
 }
-
