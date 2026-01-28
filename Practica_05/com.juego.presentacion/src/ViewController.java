@@ -1,21 +1,34 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Gestiona la interfaz de usuario en la consola.
+ * Es responsable de mostrar la historia, guiar al jugador en la creación del personaje
+ * y dar inicio al combate.
+ */
 public class ViewController {
-    private final GameModel gameModel;
-    private final Scanner scanner = new Scanner(System.in);
+    // --- ATRIBUTOS ---
+    private final GameModel gameModel;      // Referencia al modelo de datos del juego.
+    private final Scanner scanner = new Scanner(System.in); // Objeto para leer la entrada del usuario.
 
+    /**
+     * Constructor que prepara e inicia la secuencia del juego.
+     */
     public ViewController() {
         GameController gameController = new GameController();
         gameModel = new GameModel();
 
-        showIntro();
-        Character player = createCharacter();
-        // La raza se obtiene directamente del personaje jugador, no del rol.
+        showIntro(); // Muestra la introducción de la historia.
+        Character player = createCharacter(); // Guía al jugador para crear su personaje.
+        
+        // Crea un enemigo con el mismo rol y raza que el jugador para el combate.
         Character enemy = new Character("Enemigo", player.getRole(), player.getRace());
-        gameController.startCombat(player, enemy);
+        gameController.startCombat(player, enemy); // Inicia el combate.
     }
 
+    /**
+     * Muestra el texto de introducción y espera a que el jugador pulse ENTER.
+     */
     private void showIntro() {
         System.out.println("""
                 Hace siglos, cuando el mundo aún no tenía nombre, cuatro razas reclamaron la tierra como suya.
@@ -33,6 +46,10 @@ public class ViewController {
         scanner.nextLine();
     }
 
+    /**
+     * Orquesta el proceso de creación del personaje, pidiendo nombre, raza y rol.
+     * @return El personaje jugador creado.
+     */
     private Character createCharacter() {
         System.out.println("\n--- CREACIÓN DE PERSONAJE ---");
         System.out.print("Introduce el nombre de tu personaje: ");
@@ -45,6 +62,10 @@ public class ViewController {
         return new Character(name, created_role, created_race);
     }
 
+    /**
+     * Muestra un menú para que el jugador elija una raza y gestiona la selección.
+     * @return La raza seleccionada.
+     */
     private Race selectRace() {
         Race[] races = gameModel.getRaces();
         while (true) {
@@ -56,7 +77,7 @@ public class ViewController {
 
             try {
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Consumir el salto de línea
+                scanner.nextLine(); // Limpia el buffer del scanner.
                 if (choice > 0 && choice <= races.length) {
                     return races[choice - 1];
                 } else {
@@ -64,11 +85,15 @@ public class ViewController {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Entrada no válida. Debes introducir un número.");
-                scanner.nextLine(); // Limpiar el buffer del scanner
+                scanner.nextLine(); // Limpia el buffer en caso de error.
             }
         }
     }
 
+    /**
+     * Muestra un menú para que el jugador elija un rol y gestiona la selección.
+     * @return El rol seleccionado.
+     */
     private Role selectRole() {
         Role[] roles = gameModel.getRoles();
         while (true) {
@@ -80,7 +105,7 @@ public class ViewController {
 
             try {
                 int choice = scanner.nextInt();
-                scanner.nextLine(); // Consumir el salto de línea
+                scanner.nextLine(); // Limpia el buffer.
                 if (choice > 0 && choice <= roles.length) {
                     return roles[choice - 1];
                 } else {
@@ -88,7 +113,7 @@ public class ViewController {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Entrada no válida. Debes introducir un número.");
-                scanner.nextLine(); // Limpiar el buffer del scanner
+                scanner.nextLine(); // Limpia el buffer en caso de error.
             }
         }
     }
