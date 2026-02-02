@@ -1,3 +1,3 @@
-public static void main(String[] args){
-    ArrayList registroCombate= new ArrayList<>();
+public static void main(String[] args) {
+    new censoUnico();
 }
