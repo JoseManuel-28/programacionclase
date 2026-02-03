@@ -1,3 +1,3 @@
 public static void main(String[] args) {
-    new censoUnico();
+    new mercadoHechizos();
 }
