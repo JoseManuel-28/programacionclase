@@ -8,6 +8,6 @@ public class bolsaOro {
         oro.put("baldur", 35);
         oro.put("Guldan SaqueaSangre", 57);
 
-        System.out.println(oro.get("Guldan SaqueaSangre"));
+        System.out.println("mana de guldan SaqueaSangre = " + oro.get("Guldan SaqueaSangre" ));
     }
 }

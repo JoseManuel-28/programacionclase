@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class registroMuertes {
-    public ArrayList registroCombate;
+    public ArrayList<String> registroCombate;
     public registroMuertes(){
         registroCombate = new ArrayList<>();
 
