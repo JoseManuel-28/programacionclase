@@ -1,8 +1,7 @@
 public static void main(String[] args) {
-    new registroMuertes();
-    new censoUnico();
-    new bolsaOro();
-    new limpiezaCalabozo();
-    new mercadoHechizos();
 
+    bloque1 bloque1 = new bloque1();
+    bloque1.registroMuerte();
+    bloque1.mercadoHechizos();
+    bloque1.limpiezaCalabozo();
 }

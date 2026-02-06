@@ -7,7 +7,8 @@ public class bolsaOro {
     public bolsaOro(){
         oro.put("baldur", 35);
         oro.put("Guldan SaqueaSangre", 57);
+        String nombre = "Guldan";
 
-        System.out.println("mana de guldan SaqueaSangre = " + oro.get("Guldan SaqueaSangre" ));
+        System.out.println("Oro de " + nombre + " = " + oro.get("Guldan SaqueaSangre" ));
     }
 }
