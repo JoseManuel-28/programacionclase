@@ -94,6 +94,8 @@ public class bloque1 {
             System.out.println("-------------------------");
         }
         System.out.println("Bloque 1 terminado");
+
+        System.out.println("------------------------------");
     }
 
 }

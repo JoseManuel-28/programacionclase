@@ -7,4 +7,7 @@ public static void main(String[] args) {
     bloque1.limpiezaCalabozo(registro);
     bloque1.mercadoHechizos();
     bloque1.expulsionReino(villanos);
+
+    bloque2 bloque2 = new bloque2();
+    bloque2.repositorioGremios();
 }
