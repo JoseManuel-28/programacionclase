@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Map;
 
 public class bloque1 {
+
     public ArrayList<String> registroMuerte() {
         System.out.println("Ejercicio 1: ");
 
@@ -26,6 +27,48 @@ public class bloque1 {
         return registroCombate;
     }
 
+    public HashSet<String> censoUnico (){
+        System.out.println("ejercicio 2:");
+        HashSet<String> nombreVillanos;
+
+        nombreVillanos = new HashSet<>();
+
+        nombreVillanos.add ("Voldemort");
+        nombreVillanos.add ("Morgoth");
+        nombreVillanos.add ("Morgoth");
+        nombreVillanos.add ("sauron");
+
+        System.out.println(nombreVillanos);
+        System.out.println("-----------------------------");
+        return nombreVillanos;
+
+
+    }
+
+    public void bolsaOro() {
+        System.out.println("Ejercicio 3:");
+
+        HashMap<String, Integer> oro = new HashMap<>();
+
+        oro.put("baldur", 35);
+        oro.put("Guldan SaqueaSangre", 57);
+
+        for (String nombre : oro.keySet()){
+            System.out.println("oro de " + nombre + " : " + oro.get(nombre));
+        }
+
+        System.out.println("--------------------------");
+    }
+
+    public void limpiezaCalabozo (ArrayList<String> registro) {
+        System.out.println("Ejercicio 4:");
+        System.out.println("antes " + registro);
+        registro.remove(0);
+        registro.add("Dragon invocado");
+        System.out.println("ahora " + registro);
+        System.out.println("-----------------------------");
+    }
+
     public void mercadoHechizos() {
         System.out.println("Ejercicio 5 : ");
 
@@ -42,55 +85,15 @@ public class bloque1 {
         }
         System.out.println("----------------------------");
     }
-    public void limpiezaCalabozo (ArrayList<String> registro) {
-        System.out.println("Ejercicio 4:");
-        System.out.println("antes " + registro);
-        registro.remove(0);
-        registro.add("Dragon invocado");
-        System.out.println("ahora " + registro);
-        System.out.println("-----------------------------");
+
+    public void expulsionReino (HashSet<String> nombreVillanos){
+        System.out.println("Ejercicio 6: ");
+        if (nombreVillanos.contains("sauron")){
+            nombreVillanos.remove("sauron");
+            System.out.println("sauron eliminado");
+            System.out.println("-------------------------");
+        }
+        System.out.println("Bloque 1 terminado");
     }
 
-    public void censoUnico (){
-        System.out.println("ejercicio 2:");
-         HashSet<String> nombreVillanos;
-
-            nombreVillanos = new HashSet<>();
-
-            nombreVillanos.add ("Voldemort");
-            nombreVillanos.add ("Morgoth");
-            nombreVillanos.add ("Morgoth");
-            nombreVillanos.add ("sauron");
-
-            System.out.println(nombreVillanos);
-
-            if (nombreVillanos.contains("sauron")){
-                nombreVillanos.remove("sauron");
-                System.out.println("sauron eliminado");
-            }
-        System.out.println("-----------------------------");
-    }
-
-    public void bolsaOro() {
-        System.out.println("Ejercicio 3:");
-        HashMap<String, Integer> oro = new HashMap<>();
-
-        oro.put("baldur", 35);
-        oro.put("Guldan SaqueaSangre", 57);
-        String nombre = "Guldan";
-
-        System.out.println("Oro de " + nombre + " = " + oro.get("Guldan SaqueaSangre"));
-
-        System.out.println("--------------------------");
-    }
 }
-
-/*registroMuerte registro = new registroMuerte();
-
-        System.out.println("Antes " + registro.registroCombate);
-
-        registro.registroCombate.remove(0);
-
-        registro.registroCombate.add("Dragon invocado");
-
-        System.out.println("Ahora " + registro.registroCombate);*/
