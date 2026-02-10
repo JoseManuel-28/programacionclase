@@ -6,7 +6,7 @@ import java.util.Map;
 public class bloque1 {
 
     public ArrayList<String> registroMuerte() {
-        System.out.println("Ejercicio 1: ");
+        System.out.println("Ejercicio 1: " + "\n");
 
         //Se crea un ArrayList en el que se guardaran lo que pasará en el combate
         ArrayList<String> registroCombate = new ArrayList<>();
@@ -28,11 +28,12 @@ public class bloque1 {
     }
 
     public HashSet<String> censoUnico (){
-        System.out.println("ejercicio 2:");
-        HashSet<String> nombreVillanos;
+        System.out.println("ejercicio 2:" + "\n");
 
-        nombreVillanos = new HashSet<>();
+        //Creas un Hashet de tipo String que sea nombreVillanos
+        HashSet<String> nombreVillanos = new HashSet<>();
 
+        //Añades el nombre de los villanos con .add dentro del Hashet<>
         nombreVillanos.add ("Voldemort");
         nombreVillanos.add ("Morgoth");
         nombreVillanos.add ("Morgoth");
@@ -46,7 +47,7 @@ public class bloque1 {
     }
 
     public void bolsaOro() {
-        System.out.println("Ejercicio 3:");
+        System.out.println("Ejercicio 3:" + "\n");
 
         HashMap<String, Integer> oro = new HashMap<>();
 
@@ -61,7 +62,7 @@ public class bloque1 {
     }
 
     public void limpiezaCalabozo (ArrayList<String> registro) {
-        System.out.println("Ejercicio 4:");
+        System.out.println("Ejercicio 4:" + "\n");
         System.out.println("antes " + registro);
         registro.remove(0);
         registro.add("Dragon invocado");
@@ -70,7 +71,7 @@ public class bloque1 {
     }
 
     public void mercadoHechizos() {
-        System.out.println("Ejercicio 5 : ");
+        System.out.println("Ejercicio 5 : " + "\n");
 
         HashMap<String, Double> mana = new HashMap<>();
         mana.put("Ariamis", 60.5);
@@ -87,15 +88,12 @@ public class bloque1 {
     }
 
     public void expulsionReino (HashSet<String> nombreVillanos){
-        System.out.println("Ejercicio 6: ");
+        System.out.println("Ejercicio 6: " + "\n");
         if (nombreVillanos.contains("sauron")){
             nombreVillanos.remove("sauron");
             System.out.println("sauron eliminado");
-            System.out.println("-------------------------");
         }
-        System.out.println("Bloque 1 terminado");
-
-        System.out.println("------------------------------");
+        System.out.println("-------------------------");
     }
 
 }
