@@ -10,4 +10,6 @@ public static void main(String[] args) {
 
     bloque2 bloque2 = new bloque2();
     bloque2.repositorioGremios();
+    bloque2.sistemaLoot();
+    bloque2.estadisticas();
 }

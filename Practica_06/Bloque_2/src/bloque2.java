@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class bloque2 {
 
@@ -52,6 +53,37 @@ public class bloque2 {
         }else {
             System.out.println("No existe el nombre de gremio");
         }
+        System.out.println("---------------------");
     }
 
+    public void sistemaLoot () {
+        System.out.println("ejercicio 8 " + "\n");
+        HashMap<String, HashSet<String>> mostruo = new HashMap<>();
+        HashSet<String> trasgo = new HashSet<>();
+
+        trasgo.add("espada oxidada");
+        trasgo.add("espada oxidada");
+        trasgo.add("set de ladron");
+
+        mostruo.put("trasgo", trasgo);
+        System.out.println("Monstruo loot" + "\n" + " - " + trasgo + " - ");
+        System.out.println("---------------------");
+    }
+
+
+    public void estadisticas (){
+        System.out.println("Ejercicio 9 " + "\n");
+        HashMap<String, HashMap<String, Integer>> jugador = new HashMap<>();
+
+        HashMap<String, Integer> estadisticasKonan = new HashMap<>();
+        estadisticasKonan.put("fuerza", 26);
+        estadisticasKonan.put("destreza", 26);
+
+        jugador.put("konan", estadisticasKonan);
+        if (jugador.containsKey("konan")){
+            int fuerza = estadisticasKonan.get("fuerza") + 2;
+            estadisticasKonan.put("fuerza", fuerza);
+        }
+        System.out.println("Las estadisticas de konan son: " + " \n " + " fuerza = " + estadisticasKonan.get("fuerza"));
+    }
 }
