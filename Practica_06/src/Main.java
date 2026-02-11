@@ -12,4 +12,5 @@ public static void main(String[] args) {
     bloque2.repositorioGremios();
     bloque2.sistemaLoot();
     bloque2.estadisticas();
+    bloque2.buscadorTraidores();
 }
