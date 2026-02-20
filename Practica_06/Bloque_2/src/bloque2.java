@@ -86,4 +86,7 @@ public class bloque2 {
         }
         System.out.println("Las estadisticas de konan son: " + " \n " + " fuerza = " + estadisticasKonan.get("fuerza"));
     }
+
+    public void subasta (){
+    }
 }
