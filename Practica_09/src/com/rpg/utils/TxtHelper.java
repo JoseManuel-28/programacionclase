@@ -15,6 +15,7 @@ public class TxtHelper {
             List<String> Lineas = Files.readAllLines(Paths.get("ficheros/ciudades.txt"));
             List<ciudades> ListaCiudades = new ArrayList<>();
             System.out.println("--Contenido del fichero--");
+            System.out.println("");
             Lineas.remove(0);
             for (String linea : Lineas) {
 

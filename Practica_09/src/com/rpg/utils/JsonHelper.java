@@ -8,10 +8,14 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 
 public class JsonHelper {
     public static void leerPersonajes(){
+        System.out.println("");
+        System.out.println("--Personajes--");
+        System.out.println("");
         try{
             Reader reader = Files.newBufferedReader(Paths.get("ficheros/personaje.json"));
             List<personaje> listaPersonaje = new Gson().fromJson(
@@ -22,7 +26,7 @@ public class JsonHelper {
                 System.out.println("Nombre del personaje : " + personaje.getNombre());
                 System.out.println("Raza del personaje " + personaje.getRaza());
                 System.out.println("Nivel del personaje " + personaje.getNivel());
-                System.out.println("Id del equipo del personaje " + personaje.getEquipo());
+                System.out.println("Id del equipo del personaje " + Arrays.toString(personaje.getEquipoIds()));
             }
             reader.close();
 
