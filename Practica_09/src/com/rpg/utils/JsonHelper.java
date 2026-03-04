@@ -26,7 +26,8 @@ public class JsonHelper {
                 System.out.println("Nombre del personaje : " + personaje.getNombre());
                 System.out.println("Raza del personaje " + personaje.getRaza());
                 System.out.println("Nivel del personaje " + personaje.getNivel());
-                System.out.println("Id del equipo del personaje " + Arrays.toString(personaje.getEquipoIds()));
+                System.out.println("Id del equipo del personaje " + personaje.getEquipo());
+
             }
             reader.close();
 

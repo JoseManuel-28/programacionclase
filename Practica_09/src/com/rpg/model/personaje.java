@@ -6,13 +6,13 @@ public class personaje {
     String nombre;
     String raza;
     int nivel;
-    String[] equipoIds;
+    ArrayList<items> equipo;
 
-    public personaje(String nombre, String raza, int nivel, String[] equipoIds) {
+    public personaje(String nombre, String raza, int nivel, ArrayList<items> equipo) {
         this.nombre = nombre;
         this.raza = raza;
         this.nivel = nivel;
-        this.equipoIds = equipoIds;
+        this.equipo = equipo;
     }
 
     public String getNombre() {
@@ -39,11 +39,11 @@ public class personaje {
         this.nivel = nivel;
     }
 
-    public String[] getEquipoIds() {
-        return equipoIds;
+    public ArrayList<items> getEquipo() {
+        return equipo;
     }
 
-    public void setEquipoIds(String[] equipoIds) {
-        this.equipoIds = equipoIds;
+    public void setEquipo(ArrayList<items> equipo) {
+        this.equipo = equipo;
     }
 }
