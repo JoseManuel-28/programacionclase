@@ -33,6 +33,7 @@ public class MenuUtils {
         System.out.println("4. Cobrar impuestos");
         System.out.println("5. Entrar en combate");
         System.out.println("6. Estadísticas");
+        System.out.println("8. Ver personaje");
         System.out.println("0. Salir");
         elejir_opcion();
     }

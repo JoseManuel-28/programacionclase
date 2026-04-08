@@ -2,8 +2,10 @@ package rpg.logic;
 
 import org.w3c.dom.ls.LSOutput;
 import rpg.dao.CiudadDAO;
+import rpg.dao.ClaseRPGDAO;
 import rpg.dao.PersonajeDAO;
 import rpg.model.Ciudad;
+import rpg.model.ClaseRPG;
 import rpg.model.Personaje;
 import rpg.ui.MenuUtils;
 
@@ -19,13 +21,16 @@ public class GameController {
     private CiudadDAO ciudadDAO;
     private List<Personaje> personajeList;
     private PersonajeDAO personajeDAO;
+    private List<ClaseRPG> claseRPGList;
+    private ClaseRPGDAO claseRPGDAO;
 
     public GameController() {
         this.ciudadDAO = new CiudadDAO();
         this.ciudadesList = new ArrayList<>();
         this.personajeDAO = new PersonajeDAO();
         this.personajeList = new ArrayList<>();
-
+        this.claseRPGDAO = new ClaseRPGDAO();
+        this.claseRPGList = new ArrayList<>();
 
         //no borrar
         conectar();
@@ -55,7 +60,7 @@ public class GameController {
                     for (Ciudad c : ciudadesList) {
                         System.out.println(c.toString());
                     }
-
+                    System.out.println();
                     System.out.println("PULSE [ ENTER ] PARA SALIR...");
                     scanner.nextLine();
                     break;
@@ -83,12 +88,24 @@ public class GameController {
                     System.out.println("PULSE [ ENTER ] PARA SALIR...");
                     scanner.nextLine();
                     break;
-                case 7:
+                case 7://Prueba es estadisticas
+                    System.out.println("Mostrando Personaje");
+                    System.out.println();
+                    for (ClaseRPG cRPG: claseRPGList){
+                        System.out.println(cRPG.toString());
+                    }
+                    System.out.println();
+                    System.out.println("PULSE [ ENTER ] PARA SALIR...");
+                    scanner.nextLine();
                     break;
                 case 8:
+                    System.out.println("Observando personaje...");
+                    System.out.println();
                     for (Personaje p : personajeList){
                         System.out.println(p.toString());
                     }
+                    System.out.println("PULSE [ ENTER ] PARA SALIR...");
+                    scanner.nextLine();
             }
         } while (botonPulsado != 0);
         System.out.println("—————————————————》✧《——————————————————");
@@ -100,5 +117,6 @@ public class GameController {
     public void conectar() {
         ciudadesList = ciudadDAO.listarCiudades();
         personajeList = personajeDAO.listarPersonajes();
+        claseRPGList = claseRPGDAO.listarclases();
     }
 }

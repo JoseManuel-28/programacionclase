@@ -88,15 +88,13 @@ public class Personaje {
 
     @Override
     public String toString() {
-        return "Personaje{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", nivel=" + nivel +
-                ", oro=" + oro +
-                ", vida_actual=" + vida_actual +
-                ", id_raza=" + id_raza +
-                ", id_clase=" + id_clase +
-                ", id_ciudad_actual=" + id_ciudad_actual +
-                '}';
+        return String.format(
+                "\n=== %s ===\n" +
+                        " NIVEL: %d | HP: %d | ORO: %d\n" +
+                        "--------------------------\n" +
+                        " Raza: %d | Clase: %d | Ciudad: %d (ID: %d)\n",
+                nombre.toUpperCase(), nivel, vida_actual, oro,
+                id_raza, id_clase, id_ciudad_actual, id
+        );
     }
 }

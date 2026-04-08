@@ -38,10 +38,11 @@ public class Ciudad {
 
     @Override
     public String toString() {
-        return "Ciudad{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", nivel_minimo_acceso=" + nivel_minimo_acceso +
-                '}';
+        return String.format(
+                "\n--- CIUDAD: %s ---\n" +
+                        " ID: %d | Nivel mínimo: %d\n" +
+                        "---------------------------",
+                nombre.toUpperCase(), id, nivel_minimo_acceso
+        );
     }
 }
