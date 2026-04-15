@@ -55,4 +55,15 @@ public class Habilidad {
     public void setId_clase(int id_clase) {
         this.id_clase = id_clase;
     }
+
+    @Override
+    public String toString() {
+        return "Habilidad{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", dano_base=" + dano_base +
+                ", usos_maximos=" + usos_maximos +
+                ", id_clase=" + id_clase +
+                '}';
+    }
 }

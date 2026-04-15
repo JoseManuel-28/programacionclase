@@ -1,7 +1,7 @@
 package rpg.dao;
 
 import rpg.model.ClaseRPG;
-import rpg.model.Personaje;
+import rpg.model.Habilidad;
 import rpg.utils.ConexionBD;
 import rpg.utils.log;
 
@@ -11,18 +11,19 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClaseRPGDAO {
+public class HabilidadDAO {
+
     ConexionBD conexionBD;
     log log;
 
-    public ClaseRPGDAO() {
+    public HabilidadDAO() {
         this.conexionBD = new ConexionBD();
         this.log = new log();
     }
 
-    public List<ClaseRPG> listarclases() {
-        List<ClaseRPG> ClaseList = new ArrayList<>();
-        String sql = "SELECT * FROM Clases_RPG";
+    public List<Habilidad> listarHabilidades() {
+        List<Habilidad> HabilidadList = new ArrayList<>();
+        String sql = "SELECT * FROM Habilidades";
 
         try (Connection con = conexionBD.conectar();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -30,19 +31,24 @@ public class ClaseRPGDAO {
 
             while (rs.next()) {
                 //int id, String nombre
-                ClaseRPG clase = new ClaseRPG(
+                Habilidad habilidad = new Habilidad(
                         rs.getInt("id"),
-                        rs.getString("nombre")
+                        rs.getString("nombre"),
+                        rs.getInt("dano_base"),
+                        rs.getInt("usos_maximos"),
+                        rs.getInt("id_clase")
+
                 );
-                log.escribirLog("INFO"," CLASE AÑADIDA CON EXITO ");
-                ClaseList.add(clase);
+                log.escribirLog("INFO"," HABILIDAD AÑADIDA CON EXITO ");
+                HabilidadList.add(habilidad);
             }
 
 
         } catch (Exception e) {
-            log.escribirLog("ERROR","EL METODO LISTAR CLASES HA FALLADO " + e.getMessage());
+            log.escribirLog("ERROR","EL METODO LISTAR HABILIDADES HA FALLADO " + e.getMessage());
             throw new RuntimeException(e);
         }
-        return ClaseList;
+        return HabilidadList;
     }
+
 }

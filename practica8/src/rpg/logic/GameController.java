@@ -3,9 +3,11 @@ package rpg.logic;
 import org.w3c.dom.ls.LSOutput;
 import rpg.dao.CiudadDAO;
 import rpg.dao.ClaseRPGDAO;
+import rpg.dao.HabilidadDAO;
 import rpg.dao.PersonajeDAO;
 import rpg.model.Ciudad;
 import rpg.model.ClaseRPG;
+import rpg.model.Habilidad;
 import rpg.model.Personaje;
 import rpg.ui.MenuUtils;
 
@@ -14,6 +16,9 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Scanner;
 
+
+// TODO: Preparar la estructura para cargar y guardar toda la información
+//  necesaria del RPG (datos del mundo y progreso de los jugadores).
 public class GameController {
     private MenuUtils menuUtils = new MenuUtils();
     private Scanner scanner = new Scanner(System.in);
@@ -23,7 +28,12 @@ public class GameController {
     private PersonajeDAO personajeDAO;
     private List<ClaseRPG> claseRPGList;
     private ClaseRPGDAO claseRPGDAO;
+    private List<Habilidad> habilidadList;
+    private HabilidadDAO HabilidadDAO;
 
+
+    // TODO: Constructor - Inicializa los conectores a la base de datos (DAOs)
+    //  y crea los sacos vacíos (ArrayLists) donde guardaremos la información.
     public GameController() {
         this.ciudadDAO = new CiudadDAO();
         this.ciudadesList = new ArrayList<>();
@@ -31,6 +41,8 @@ public class GameController {
         this.personajeList = new ArrayList<>();
         this.claseRPGDAO = new ClaseRPGDAO();
         this.claseRPGList = new ArrayList<>();
+        this.habilidadList = new ArrayList<>();
+        this.HabilidadDAO = new HabilidadDAO();
 
         //no borrar
         conectar();
@@ -57,6 +69,7 @@ public class GameController {
                     System.out.println("Viajando de ciudad...");
                     System.out.println();
 
+                    // Esto muestra las ciudades
                     for (Ciudad c : ciudadesList) {
                         System.out.println(c.toString());
                     }
@@ -106,6 +119,17 @@ public class GameController {
                     }
                     System.out.println("PULSE [ ENTER ] PARA SALIR...");
                     scanner.nextLine();
+
+                    // TODO: Esto sirve para mostrar las habilidades
+                    /*for (Habilidad h : habilidadList) {
+                        System.out.println(h.toString());
+                    }*/
+
+                    // TODO: Esto sirve para mostrar las clases
+                     /*for (ClaseRPG cRPG: claseRPGList){
+                        System.out.println(cRPG.toString());
+                    }*/
+
             }
         } while (botonPulsado != 0);
         System.out.println("—————————————————》✧《——————————————————");
@@ -118,5 +142,6 @@ public class GameController {
         ciudadesList = ciudadDAO.listarCiudades();
         personajeList = personajeDAO.listarPersonajes();
         claseRPGList = claseRPGDAO.listarclases();
+        habilidadList = HabilidadDAO.listarHabilidades();
     }
 }

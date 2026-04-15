@@ -3,6 +3,7 @@ package rpg.dao;
 import rpg.model.Ciudad;
 import rpg.model.Personaje;
 import rpg.utils.ConexionBD;
+import rpg.utils.log;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,9 +13,11 @@ import java.util.List;
 
 public class PersonajeDAO {
     ConexionBD conexionBD;
+    log log;
 
     public PersonajeDAO() {
         this.conexionBD = new ConexionBD();
+        this.log = new log();
     }
 
     public List<Personaje> listarPersonajes() {
@@ -37,13 +40,15 @@ public class PersonajeDAO {
                         rs.getInt("id_clase"),
                         rs.getInt("id_ciudad_actual")
                 );
+                log.escribirLog("INFO","PERSONAJE AÑADIDO");
                 PersonajeList.add(personaje);
             }
 
 
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            log.escribirLog("ERROR","EL METODO LISTAR PERSONAJES HA FALLADO " + e.getMessage());
+            throw new RuntimeException("EL METODO LISTAR PERSONAJES HA FALLADO " + e.getMessage());
         }
         return PersonajeList;
     }
