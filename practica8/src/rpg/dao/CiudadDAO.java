@@ -43,4 +43,8 @@ public class CiudadDAO {
         return ciudadesList;
     }
 
+    public void objetoCiudad(){
+
+    }
+
 }

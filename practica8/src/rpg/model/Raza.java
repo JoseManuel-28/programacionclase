@@ -2,12 +2,12 @@ package rpg.model;
 
 public class Raza {
 
-    private int id;
+    private Raza id;
     private String nombre;
     private int bonificador_vida;
     private int bonificador_fuerza;
 
-    public Raza(int id, String nombre, int bonificador_vida, int bonificador_fuerza) {
+    public Raza(Raza id, String nombre, int bonificador_vida, int bonificador_fuerza) {
         this.id = id;
         this.nombre = nombre;
         this.bonificador_vida = bonificador_vida;

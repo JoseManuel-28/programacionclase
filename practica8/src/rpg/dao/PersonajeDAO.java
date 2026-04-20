@@ -2,6 +2,7 @@ package rpg.dao;
 
 import rpg.model.Ciudad;
 import rpg.model.Personaje;
+import rpg.model.Raza;
 import rpg.utils.ConexionBD;
 import rpg.utils.log;
 
@@ -20,15 +21,34 @@ public class PersonajeDAO {
         this.log = new log();
     }
 
-    public List<Personaje> listarPersonajes() {
+    public List<Personaje> listarPersonajes(List<Ciudad> TodasLasCiudades, List<Raza> TodasLasRazas) {
         List<Personaje>PersonajeList =new ArrayList<>();
         String sql = "SELECT * FROM Personajes";
-
         try(Connection con = conexionBD.conectar();
             PreparedStatement ps = con.prepareStatement(sql)) {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
+                int idCiudadActual = rs.getInt(" id_ciudad-actual");
+                int idRaza = rs.getInt("id_raza");
+                Raza razaEncontrada = null;
+                for (Raza r : TodasLasRazas){
+                    if (r.getId() == idRaza){
+                        razaEncontrada = r;
+                    break;
+                    }
+                }
+
+
+                Ciudad ciudadEncontrada = null;
+                for (Ciudad c : TodasLasCiudades){
+                    if (c.getId() == idCiudadActual) {
+                        ciudadEncontrada = c;
+                        break;
+                    }
+                }
+
+
                 //int id, String nombre, int nivel, int oro, int vida_actual, int id_raza, int id_clase, int id_ciudad_actual
                 Personaje personaje = new Personaje(
                         rs.getInt("id"),
@@ -36,10 +56,13 @@ public class PersonajeDAO {
                         rs.getInt("nivel"),
                         rs.getInt("oro"),
                         rs.getInt("vida_actual"),
-                        rs.getInt("id_raza"),
+                        razaEncontrada,
                         rs.getInt("id_clase"),
-                        rs.getInt("id_ciudad_actual")
+                        ciudadEncontrada
+
+                        // pasar una id de una ciudad que sea clase
                 );
+
                 log.escribirLog("INFO","PERSONAJE AÑADIDO");
                 PersonajeList.add(personaje);
             }

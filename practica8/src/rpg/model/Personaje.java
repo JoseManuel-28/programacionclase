@@ -7,11 +7,11 @@ public class Personaje {
     private int nivel;
     private int oro;
     private int vida_actual;
-    private int id_raza;
+    private Raza id_raza;
     private int id_clase;
-    private int id_ciudad_actual;
+    private Ciudad id_ciudad_actual;
 
-    public Personaje(int id, String nombre, int nivel, int oro, int vida_actual, int id_raza, int id_clase, int id_ciudad_actual) {
+    public Personaje(int id, String nombre, int nivel, int oro, int vida_actual, Raza id_raza, int id_clase, Ciudad id_ciudad_actual) {
         this.id = id;
         this.nombre = nombre;
         this.nivel = nivel;
@@ -62,11 +62,11 @@ public class Personaje {
         this.vida_actual = vida_actual;
     }
 
-    public int getId_raza() {
+    public Raza getId_raza() {
         return id_raza;
     }
 
-    public void setId_raza(int id_raza) {
+    public void setId_raza(Raza id_raza) {
         this.id_raza = id_raza;
     }
 
@@ -78,11 +78,11 @@ public class Personaje {
         this.id_clase = id_clase;
     }
 
-    public int getId_ciudad_actual() {
+    public Ciudad getId_ciudad_actual() {
         return id_ciudad_actual;
     }
 
-    public void setId_ciudad_actual(int id_ciudad_actual) {
+    public void setId_ciudad_actual(Ciudad id_ciudad_actual) {
         this.id_ciudad_actual = id_ciudad_actual;
     }
 
