@@ -1,0 +1,69 @@
+2026-04-15 13:06:55 [INFO ] [DSADAD] [DADSAD] - KHBFBIYGFIGI
+2026-04-15 13:08:19 [INFO ] [rpg.Main] [main:11] - DSADAD
+2026-04-15 13:12:01 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:12:01 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:12:01 [INFO ] [rpg.Main] [main:11] - SE HE EJECUTADO EL MAIN
+2026-04-15 13:12:32 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:50] - EL METODO LISTARPERSONAJES HA FALLADOThe column name vda_actual was not found in this ResultSet.
+2026-04-15 13:13:30 [ERROR] [rpg.dao.PersonajeDAO] [listarPersonajes:50] - EL METODO LISTAR PERSONAJES HA FALLADO The column name oo was not found in this ResultSet.
+2026-04-15 13:13:57 [ERROR] [rpg.dao.PersonajeDAO] [listarPersonajes:50] - EL METODO LISTAR PERSONAJES HA FALLADO The column name oo was not found in this ResultSet.
+2026-04-15 13:15:50 [ERROR] [rpg.dao.PersonajeDAO] [listarPersonajes:50] - EL METODO LISTAR PERSONAJES HA FALLADO ERROR: syntax error at or near "SLECT"
+  Position: 1
+2026-04-15 13:19:33 [ERROR] [rpg.dao.PersonajeDAO] [listarPersonajes:50] - EL METODO LISTAR PERSONAJES HA FALLADO The column name oo was not found in this ResultSet.
+2026-04-15 13:19:56 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:19:56 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:19:56 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:19:56 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:19:56 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:19:56 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:19:56 [INFO ] [rpg.Main] [main:11] - SE HE EJECUTADO EL MAIN
+2026-04-15 13:22:03 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:22:03 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:22:03 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:22:03 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:22:03 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:22:03 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:22:03 [INFO ] [rpg.Main] [main:11] - SE HE EJECUTADO EL MAIN
+2026-04-15 13:35:47 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:35:47 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:35:47 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:35:47 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:35:47 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:35:47 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:37:23 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 13:37:23 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 13:37:23 [INFO ] [rpg.Main] [main:11] - SE HE EJECUTADO EL MAIN
+2026-04-15 21:34:29 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 21:34:29 [INFO ] [rpg.dao.PersonajeDAO] [listarPersonajes:43] - PERSONAJE AÑADIDO
+2026-04-15 21:34:29 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.ClaseRPGDAO] [listarclases:37] -  CLASE AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.dao.HabilidadDAO] [listarHabilidades:42] -  HABILIDAD AÑADIDA CON EXITO 
+2026-04-15 21:34:29 [INFO ] [rpg.Main] [main:11] - SE HE EJECUTADO EL MAIN
