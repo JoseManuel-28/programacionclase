@@ -1,4 +1,7 @@
 package RPG.Exception;
 
-public class FondosInsuficientesException {
+public class FondosInsuficientesException extends RuntimeException {
+    public FondosInsuficientesException(String message) {
+        super(message);
+    }
 }
